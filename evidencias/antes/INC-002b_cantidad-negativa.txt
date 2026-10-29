@@ -1,0 +1,12 @@
+# INC-002b_cantidad-negativa - POST con cantidad -5 (debe rechazar y no tocar stock)
+# Peticion: POST /api/pedidos
+# Cuerpo:   {"clienteId":"CLI-001","items":[{"sku":"LAP-001","cantidad":-5}]}
+# ---------------- respuesta ----------------
+HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+Date: Thu, 29 Oct 2026 23:09:28 GMT
+Server: Kestrel
+Location: http://localhost:5000/api/Pedidos/5ea248ca-5faa-4822-a856-439e912681e8
+Transfer-Encoding: chunked
+
+{"id":"5ea248ca-5faa-4822-a856-439e912681e8","clienteId":"CLI-001","estado":"Confirmado","total":-4499.50,"items":[{"sku":"LAP-001","cantidad":-5,"precioUnitario":899.90}]}

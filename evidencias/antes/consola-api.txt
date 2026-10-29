@@ -1,0 +1,59 @@
+Usando la configuración de inicio de src\OperacionRescate.Api\Properties\launchSettings.json...
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5000
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\kathy\Desktop\Ciclo8\DesarrolloMultiplataformaAplicaciones\Semana17\OperacionRescate\src\OperacionRescate.Api
+info: OperacionRescate.Api.Services.InventarioService[0]
+      Inventario inicializado con 5 productos
+fail: OperacionRescate.Api.Middleware.LegacyErrorMiddleware[0]
+      Error: The given key 'NOEXISTE-999' was not present in the dictionary.
+info: OperacionRescate.Api.Services.PedidoService[0]
+      Procesando pedido de CLI-001 con primer SKU LAP-001
+fail: OperacionRescate.Api.Middleware.LegacyErrorMiddleware[0]
+      Error: Attempted to divide by zero.
+info: OperacionRescate.Api.Services.PedidoService[0]
+      Procesando pedido de CLI-001 con primer SKU LAP-001
+info: OperacionRescate.Api.Services.PedidoService[0]
+      Precio promedio por unidad del pedido de CLI-001: 899.90
+info: OperacionRescate.Api.Services.PedidoService[0]
+      Pedido 5ea248ca-5faa-4822-a856-439e912681e8 procesado correctamente
+fail: OperacionRescate.Api.Middleware.LegacyErrorMiddleware[0]
+      Error: Object reference not set to an instance of an object.
+fail: OperacionRescate.Api.Middleware.LegacyErrorMiddleware[0]
+      Error: Sequence contains no elements
+info: OperacionRescate.Api.Services.PedidoService[0]
+      Procesando pedido de  con primer SKU LAP-001
+info: OperacionRescate.Api.Services.PedidoService[0]
+      Precio promedio por unidad del pedido de : 899.90
+info: OperacionRescate.Api.Services.PedidoService[0]
+      Pedido ae489ce8-59d5-4a58-ba59-561bbecd795c procesado correctamente
+fail: OperacionRescate.Api.Middleware.LegacyErrorMiddleware[0]
+      Error: Object reference not set to an instance of an object.
+info: OperacionRescate.Api.Services.PedidoService[0]
+      Procesando pedido de CLI-001 con primer SKU NOEXISTE-000
+fail: OperacionRescate.Api.Middleware.LegacyErrorMiddleware[0]
+      Error: Object reference not set to an instance of an object.
+info: OperacionRescate.Api.Services.PedidoService[0]
+      Procesando pedido de CLI-001 con primer SKU SSD-005
+info: OperacionRescate.Api.Services.PedidoService[0]
+      Precio promedio por unidad del pedido de CLI-001: 109.00
+fail: OperacionRescate.Api.Middleware.LegacyErrorMiddleware[0]
+      Error: Error al procesar el pedido
+info: OperacionRescate.Api.Services.PedidoService[0]
+      Procesando pedido de CLI-001 con primer SKU LAP-001
+info: OperacionRescate.Api.Services.PedidoService[0]
+      Precio promedio por unidad del pedido de CLI-001: 172.80
+fail: OperacionRescate.Api.Middleware.LegacyErrorMiddleware[0]
+      Error: Error al procesar el pedido
+fail: OperacionRescate.Api.Middleware.LegacyErrorMiddleware[0]
+      Error: Fallo simulado de laboratorio
+info: OperacionRescate.Api.Services.PedidoService[0]
+      Procesando pedido de CLI-001 con primer SKU LAP-001
+info: OperacionRescate.Api.Services.PedidoService[0]
+      Precio promedio por unidad del pedido de CLI-001: 899.90
+info: OperacionRescate.Api.Services.PedidoService[0]
+      Pedido 27de85bd-7df0-4c28-835c-d6a14e9d1298 procesado correctamente

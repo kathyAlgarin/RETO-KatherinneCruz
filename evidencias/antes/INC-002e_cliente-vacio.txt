@@ -1,0 +1,12 @@
+# INC-002e_cliente-vacio - POST con clienteId vacio
+# Peticion: POST /api/pedidos
+# Cuerpo:   {"clienteId":"","items":[{"sku":"LAP-001","cantidad":1}]}
+# ---------------- respuesta ----------------
+HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+Date: Thu, 29 Oct 2026 23:09:28 GMT
+Server: Kestrel
+Location: http://localhost:5000/api/Pedidos/ae489ce8-59d5-4a58-ba59-561bbecd795c
+Transfer-Encoding: chunked
+
+{"id":"ae489ce8-59d5-4a58-ba59-561bbecd795c","clienteId":"","estado":"Confirmado","total":899.90,"items":[{"sku":"LAP-001","cantidad":1,"precioUnitario":899.90}]}

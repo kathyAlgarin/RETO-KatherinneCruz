@@ -1,0 +1,12 @@
+# OK-03_pedido-valido - Comportamiento correcto previo: pedido valido
+# Peticion: POST /api/pedidos
+# Cuerpo:   {"clienteId":"CLI-001","items":[{"sku":"LAP-001","cantidad":2}]}
+# ---------------- respuesta ----------------
+HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+Date: Thu, 29 Oct 2026 23:09:31 GMT
+Server: Kestrel
+Location: http://localhost:5000/api/Pedidos/27de85bd-7df0-4c28-835c-d6a14e9d1298
+Transfer-Encoding: chunked
+
+{"id":"27de85bd-7df0-4c28-835c-d6a14e9d1298","clienteId":"CLI-001","estado":"Confirmado","total":1799.80,"items":[{"sku":"LAP-001","cantidad":2,"precioUnitario":899.90}]}

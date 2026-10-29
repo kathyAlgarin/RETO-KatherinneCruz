@@ -1,0 +1,27 @@
+# INC-003b_atomicidad - POST 1 LAP-001 + 9 SSD-005: LAP-001 no debe bajar
+# Peticion: POST /api/pedidos
+# Cuerpo:   {"clienteId":"CLI-001","items":[{"sku":"LAP-001","cantidad":1},{"sku":"MOU-002","cantidad":1},{"sku":"SSD-005","cantidad":9}]}
+# ---------------- respuesta ----------------
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/plain
+Date: Thu, 29 Oct 2026 23:09:29 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+System.Exception: Error al procesar el pedido
+   at OperacionRescate.Api.Services.PedidoService.CrearPedido(CrearPedidoRequest request) in C:\Users\kathy\Desktop\Ciclo8\DesarrolloMultiplataformaAplicaciones\Semana17\OperacionRescate\src\OperacionRescate.Api\Services\PedidoService.cs:line 51
+   at OperacionRescate.Api.Controllers.PedidosController.Crear(CrearPedidoRequest request) in C:\Users\kathy\Desktop\Ciclo8\DesarrolloMultiplataformaAplicaciones\Semana17\OperacionRescate\src\OperacionRescate.Api\Controllers\PedidosController.cs:line 20
+   at lambda_method7(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at OperacionRescate.Api.Middleware.LegacyErrorMiddleware.InvokeAsync(HttpContext context) in C:\Users\kathy\Desktop\Ciclo8\DesarrolloMultiplataformaAplicaciones\Semana17\OperacionRescate\src\OperacionRescate.Api\Middleware\LegacyErrorMiddleware.cs:line 18

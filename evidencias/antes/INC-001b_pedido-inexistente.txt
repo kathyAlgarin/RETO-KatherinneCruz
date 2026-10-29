@@ -1,0 +1,8 @@
+# INC-001b_pedido-inexistente - GET de pedido que no existe
+# Peticion: GET /api/pedidos/no-existe
+# ---------------- respuesta ----------------
+HTTP/1.1 204 No Content
+Date: Thu, 29 Oct 2026 23:09:27 GMT
+Server: Kestrel
+
+

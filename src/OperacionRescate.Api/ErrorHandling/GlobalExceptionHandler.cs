@@ -4,10 +4,11 @@ using OperacionRescate.Api.Exceptions;
 namespace OperacionRescate.Api.ErrorHandling;
 
 /// <summary>
-/// Convierte cualquier excepción en una respuesta segura. Decide el código HTTP y registra
-/// solo lo inesperado (los errores de negocio 400/404/409 no son errores internos).
+/// Convierte cualquier excepción en una respuesta segura. Decide el código HTTP; no registra:
+/// deja la excepción en HttpContext.Items para que RequestDiagnosticMiddleware (que envuelve a
+/// este manejador y conoce el estado final) la registre una sola vez.
 /// </summary>
-public sealed class GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger) : IExceptionHandler
+public sealed class GlobalExceptionHandler : IExceptionHandler
 {
     public const string DetalleGenerico =
         "Ocurrió un error inesperado. Indique el correlationId al equipo de soporte.";
@@ -15,13 +16,14 @@ public sealed class GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logge
     public async ValueTask<bool> TryHandleAsync(
         HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
     {
+        httpContext.Items[DiagnosticItems.Exception] = exception;
+
         if (exception is AppException app)
         {
             await ProblemResponse.WriteAsync(httpContext, app.StatusCode, app.Title, app.Message);
         }
         else
         {
-            logger.LogError(exception, "Excepción no controlada en {RequestPath}", httpContext.Request.Path.Value);
             await ProblemResponse.WriteAsync(
                 httpContext, StatusCodes.Status500InternalServerError, "Error interno del servidor", DetalleGenerico);
         }

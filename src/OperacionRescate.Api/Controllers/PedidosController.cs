@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using OperacionRescate.Api.Exceptions;
 using OperacionRescate.Api.Models;
 using OperacionRescate.Api.Services;
 
@@ -24,7 +25,8 @@ public class PedidosController : ControllerBase
     [HttpGet("{id}")]
     public IActionResult Obtener(string id)
     {
-        var pedido = _pedidos.ObtenerPorId(id);
+        var pedido = _pedidos.ObtenerPorId(id)
+            ?? throw new NoEncontradoException($"No existe el pedido '{id}'.");
         return Ok(pedido);
     }
 }

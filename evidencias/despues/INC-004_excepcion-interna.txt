@@ -1,0 +1,14 @@
+# INC-004_excepcion-interna - GET /api/lab/excepcion expone detalles tecnicos
+# Peticion: GET /api/lab/excepcion
+# ---------------- respuesta ----------------
+HTTP/1.1 500 Internal Server Error
+Content-Type: application/problem+json
+Date: Thu, 29 Oct 2026 23:36:24 GMT
+Server: Kestrel
+Cache-Control: no-cache,no-store
+Expires: -1
+Pragma: no-cache
+Transfer-Encoding: chunked
+X-Correlation-ID: e169c851-5f4c-476e-aa0c-4e3eaf9cb505
+
+{"type":"https://www.rfc-editor.org/rfc/rfc9110#section-15.6.1","title":"Error interno del servidor","status":500,"detail":"Ocurrió un error inesperado. Indique el correlationId al equipo de soporte.","correlationId":"e169c851-5f4c-476e-aa0c-4e3eaf9cb505"}

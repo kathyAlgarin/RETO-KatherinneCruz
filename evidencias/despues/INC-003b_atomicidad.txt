@@ -1,0 +1,15 @@
+# INC-003b_atomicidad - POST 1 LAP-001 + 9 SSD-005: LAP-001 no debe bajar
+# Peticion: POST /api/pedidos
+# Cuerpo:   {"clienteId":"CLI-001","items":[{"sku":"LAP-001","cantidad":1},{"sku":"MOU-002","cantidad":1},{"sku":"SSD-005","cantidad":9}]}
+# ---------------- respuesta ----------------
+HTTP/1.1 409 Conflict
+Content-Type: application/problem+json
+Date: Thu, 29 Oct 2026 23:36:23 GMT
+Server: Kestrel
+Cache-Control: no-cache,no-store
+Expires: -1
+Pragma: no-cache
+Transfer-Encoding: chunked
+X-Correlation-ID: 72ffaa6c-ee08-48d2-a0d2-f70087af97a7
+
+{"type":"https://www.rfc-editor.org/rfc/rfc9110#section-15.5.10","title":"Stock insuficiente","status":409,"detail":"No hay unidades suficientes de SSD-005.","correlationId":"72ffaa6c-ee08-48d2-a0d2-f70087af97a7"}

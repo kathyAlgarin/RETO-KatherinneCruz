@@ -1,0 +1,15 @@
+# INC-002b_cantidad-negativa - POST con cantidad -5 (debe rechazar y no tocar stock)
+# Peticion: POST /api/pedidos
+# Cuerpo:   {"clienteId":"CLI-001","items":[{"sku":"LAP-001","cantidad":-5}]}
+# ---------------- respuesta ----------------
+HTTP/1.1 400 Bad Request
+Content-Type: application/problem+json
+Date: Thu, 29 Oct 2026 23:36:22 GMT
+Server: Kestrel
+Cache-Control: no-cache,no-store
+Expires: -1
+Pragma: no-cache
+Transfer-Encoding: chunked
+X-Correlation-ID: 78d0cd95-1daa-4dde-8094-62e637a31758
+
+{"type":"https://www.rfc-editor.org/rfc/rfc9110#section-15.5.1","title":"Solicitud inválida","status":400,"detail":"La cantidad de LAP-001 debe ser un entero mayor que cero.","correlationId":"78d0cd95-1daa-4dde-8094-62e637a31758"}

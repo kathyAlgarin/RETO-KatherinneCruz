@@ -1,0 +1,15 @@
+# INC-002g_sku-inexistente - POST con SKU inexistente
+# Peticion: POST /api/pedidos
+# Cuerpo:   {"clienteId":"CLI-001","items":[{"sku":"NOEXISTE-000","cantidad":1}]}
+# ---------------- respuesta ----------------
+HTTP/1.1 404 Not Found
+Content-Type: application/problem+json
+Date: Thu, 29 Oct 2026 23:36:23 GMT
+Server: Kestrel
+Cache-Control: no-cache,no-store
+Expires: -1
+Pragma: no-cache
+Transfer-Encoding: chunked
+X-Correlation-ID: 1a1295fd-97fc-437b-85fd-98e82d31f075
+
+{"type":"https://www.rfc-editor.org/rfc/rfc9110#section-15.5.5","title":"Recurso no encontrado","status":404,"detail":"No existe el producto con SKU 'NOEXISTE-000'.","correlationId":"1a1295fd-97fc-437b-85fd-98e82d31f075"}

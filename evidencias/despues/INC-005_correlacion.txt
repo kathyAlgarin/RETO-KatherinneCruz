@@ -1,0 +1,11 @@
+# INC-005_correlacion - Sin X-Correlation-ID / con uno valido / con uno hostil
+# Peticion: GET /api/inventario/MOU-002
+# ---------------- respuesta ----------------
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Thu, 29 Oct 2026 23:36:24 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+X-Correlation-ID: 9b734db3-521f-4237-95be-a1de217bda1f
+
+{"sku":"MOU-002","nombre":"Mouse inalámbrico","stock":1000,"precio":19.90}

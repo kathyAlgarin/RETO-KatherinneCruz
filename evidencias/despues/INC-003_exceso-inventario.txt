@@ -1,0 +1,15 @@
+# INC-003_exceso-inventario - POST pidiendo 9 SSD-005 con stock 8
+# Peticion: POST /api/pedidos
+# Cuerpo:   {"clienteId":"CLI-001","items":[{"sku":"SSD-005","cantidad":9}]}
+# ---------------- respuesta ----------------
+HTTP/1.1 409 Conflict
+Content-Type: application/problem+json
+Date: Thu, 29 Oct 2026 23:36:23 GMT
+Server: Kestrel
+Cache-Control: no-cache,no-store
+Expires: -1
+Pragma: no-cache
+Transfer-Encoding: chunked
+X-Correlation-ID: bc37d1ef-12be-4477-a9ee-ba1a9ead2c4a
+
+{"type":"https://www.rfc-editor.org/rfc/rfc9110#section-15.5.10","title":"Stock insuficiente","status":409,"detail":"No hay unidades suficientes de SSD-005.","correlationId":"bc37d1ef-12be-4477-a9ee-ba1a9ead2c4a"}

@@ -1,0 +1,15 @@
+# INC-002c_cantidad-decimal - POST con cantidad 1.5 (no entera)
+# Peticion: POST /api/pedidos
+# Cuerpo:   {"clienteId":"CLI-001","items":[{"sku":"LAP-001","cantidad":1.5}]}
+# ---------------- respuesta ----------------
+HTTP/1.1 400 Bad Request
+Content-Type: application/problem+json
+Date: Thu, 29 Oct 2026 23:36:22 GMT
+Server: Kestrel
+Cache-Control: no-cache,no-store
+Expires: -1
+Pragma: no-cache
+Transfer-Encoding: chunked
+X-Correlation-ID: 316cd402-dee6-4a4a-a741-f9e3e6b0eb8d
+
+{"type":"https://www.rfc-editor.org/rfc/rfc9110#section-15.5.1","title":"Solicitud inválida","status":400,"detail":"El cuerpo de la solicitud es obligatorio y debe ser un JSON válido.","correlationId":"316cd402-dee6-4a4a-a741-f9e3e6b0eb8d"}

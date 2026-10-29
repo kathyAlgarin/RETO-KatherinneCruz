@@ -1,0 +1,11 @@
+# INC-008_lento - GET /api/lab/lento?ms=800 (el log no registra duracion)
+# Peticion: GET /api/lab/lento?ms=800
+# ---------------- respuesta ----------------
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Thu, 29 Oct 2026 23:36:25 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+X-Correlation-ID: ecb9670e-cc41-4b67-8a02-bb5b5f565403
+
+{"esperadoMs":800}

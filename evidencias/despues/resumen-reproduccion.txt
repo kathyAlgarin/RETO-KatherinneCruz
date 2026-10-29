@@ -1,0 +1,24 @@
+== Stock inicial: LAP-001 "stock":497 | SSD-005 "stock":8
+[INC-001_producto-inexistente] GET /api/inventario/NOEXISTE-999 -> HTTP/1.1 404 Not Found
+[INC-001b_pedido-inexistente] GET /api/pedidos/no-existe -> HTTP/1.1 404 Not Found
+[INC-002_cantidad-cero] POST /api/pedidos -> HTTP/1.1 400 Bad Request
+[INC-002b_cantidad-negativa] POST /api/pedidos -> HTTP/1.1 400 Bad Request
+   stock LAP-001 antes="stock":497 despues="stock":497
+[INC-002c_cantidad-decimal] POST /api/pedidos -> HTTP/1.1 400 Bad Request
+[INC-002d_items-vacio] POST /api/pedidos -> HTTP/1.1 400 Bad Request
+[INC-002e_cliente-vacio] POST /api/pedidos -> HTTP/1.1 400 Bad Request
+[INC-002f_json-malformado] POST /api/pedidos -> HTTP/1.1 400 Bad Request
+[INC-002g_sku-inexistente] POST /api/pedidos -> HTTP/1.1 404 Not Found
+[INC-003_exceso-inventario] POST /api/pedidos -> HTTP/1.1 409 Conflict
+   stock SSD-005 antes="stock":8 despues="stock":8
+[INC-003b_atomicidad] POST /api/pedidos -> HTTP/1.1 409 Conflict
+   stock tras atomicidad: LAP-001 "stock":497 | MOU-002 "stock":1000 | SSD-005 "stock":8
+[INC-004_excepcion-interna] GET /api/lab/excepcion -> HTTP/1.1 500 Internal Server Error
+[INC-005_correlacion] GET /api/inventario/MOU-002 -> HTTP/1.1 200 OK
+[INC-005b_correlacion-valido] GET /api/inventario/MOU-002 -> HTTP/1.1 200 OK
+[INC-005c_correlacion-hostil] GET /api/inventario/MOU-002 -> HTTP/1.1 200 OK
+[INC-008_lento] GET /api/lab/lento?ms=800 -> HTTP/1.1 200 OK
+[OK-01_inventario-lista] GET /api/inventario -> HTTP/1.1 200 OK
+[OK-02_inventario-existente] GET /api/inventario/lap-001 -> HTTP/1.1 200 OK
+[OK-03_pedido-valido] POST /api/pedidos -> HTTP/1.1 201 Created
+== Stock final: LAP-001 "stock":495 | MOU-002 "stock":1000 | SSD-005 "stock":8

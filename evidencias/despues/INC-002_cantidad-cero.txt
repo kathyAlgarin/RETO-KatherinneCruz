@@ -1,0 +1,15 @@
+# INC-002_cantidad-cero - POST con cantidad 0
+# Peticion: POST /api/pedidos
+# Cuerpo:   {"clienteId":"CLI-001","items":[{"sku":"LAP-001","cantidad":0}]}
+# ---------------- respuesta ----------------
+HTTP/1.1 400 Bad Request
+Content-Type: application/problem+json
+Date: Thu, 29 Oct 2026 23:36:22 GMT
+Server: Kestrel
+Cache-Control: no-cache,no-store
+Expires: -1
+Pragma: no-cache
+Transfer-Encoding: chunked
+X-Correlation-ID: 2ee63caf-3ee0-4d26-979e-f28e5bd93217
+
+{"type":"https://www.rfc-editor.org/rfc/rfc9110#section-15.5.1","title":"Solicitud inválida","status":400,"detail":"La cantidad de LAP-001 debe ser un entero mayor que cero.","correlationId":"2ee63caf-3ee0-4d26-979e-f28e5bd93217"}

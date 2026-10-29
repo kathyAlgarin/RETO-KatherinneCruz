@@ -9,13 +9,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Serilog: niveles y consola vienen de la sección "Serilog" de appsettings; el archivo se declara
 // aquí porque su carpeta se calcula (ver LogDirectory). FromLogContext lleva CorrelationId y
 // LabRunId a cada evento. Rotación diaria conservando 14 archivos, formato JSON Lines.
-var logDirectory = LogDirectory.Resolve(builder.Configuration, builder.Environment.ContentRootPath);
 builder.Host.UseSerilog((context, services, configuration) => configuration
     .ReadFrom.Configuration(context.Configuration)
     .ReadFrom.Services(services)
     .WriteTo.File(
         new JsonLinesFormatter(),
-        Path.Combine(logDirectory, "operacion-rescate-.jsonl"),
+        Path.Combine(
+            LogDirectory.Resolve(context.Configuration, context.HostingEnvironment.ContentRootPath),
+            "operacion-rescate-.jsonl"),
         rollingInterval: RollingInterval.Day,
         retainedFileCountLimit: 14));
 
